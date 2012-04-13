@@ -49,3 +49,10 @@ class Github(object):
         :ref:`Gists service <Gists service>`
         """
         return self._gists
+
+    @property
+    def issues(self):
+        """
+        :ref:`Issues service <Issues service>`
+        """
+        return self._issues
