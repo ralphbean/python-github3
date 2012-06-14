@@ -71,6 +71,7 @@ class Github(object):
         """
         return self._pull_requests
 
+    @property
     def issues(self):
         """
         :ref:`Issues service <Issues service>`
