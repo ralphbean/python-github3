@@ -2,6 +2,8 @@
 # -*- encoding: utf-8 -*-
 
 from pygithub3.services.base import Service
+from six.moves import map
+from six.moves import zip
 
 
 class Labels(Service):

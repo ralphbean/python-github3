@@ -9,6 +9,7 @@ from pygithub3.core.result import smart, normal, base
 from pygithub3.tests.utils.core import (mock_paginate_github_in_GET, request,
                                         mock_no_paginate_github_in_GET,
                                         MockPaginate)
+import six
 
 
 class ResultInitMixin(object):
@@ -38,7 +39,7 @@ class TestSmartResultWithPaginate(ResultInitMixin, TestCase):
 
     def test_consumed_are_Pages(self):
         pages_that_are_Pages = len(
-            filter(lambda page: isinstance(page, base.Page), list(self.r)))
+            [page for page in self.r if isinstance(page, base.Page)])
         self.assertEqual(pages_that_are_Pages, 3, 'There are not 3 Pages objs')
 
     def test_all_iteration_CALLS(self):
@@ -66,7 +67,7 @@ class TestSmartResultWithoutPaginate(ResultInitMixin, TestCase):
         return mock_no_paginate_github_in_GET
 
     def test_iteration_stop_at_1(self):
-        self.r.next()
+        six.advance_iterator(self.r)
         self.assertRaises(StopIteration, self.r.next)
 
     def test_get_only_1page(self):

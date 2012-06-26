@@ -2,6 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 import functools
+import six
 
 
 class Method(object):
@@ -72,7 +73,7 @@ class Page(object):
     @get_content
     def __next__(self):
         try:
-            return self.iterable.next()
+            return six.advance_iterator(self.iterable)
         except StopIteration:
             self.iterable = iter(self.getter(self.page))
             raise StopIteration

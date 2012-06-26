@@ -30,7 +30,7 @@ class Add(Request):
             raise ValidationError("'%s' request needs emails"
                                   % (self.__class__.__name__))
 
-        return filter(is_email, self.body)
+        return tuple([ele for ele in self.body if is_email(ele)])
 
 
 class Delete(Request):

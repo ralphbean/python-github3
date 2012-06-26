@@ -38,8 +38,8 @@ class TestResourceMapping(TestCase):
         self.assertEqual(self.r.simple.type, 'simple')
 
     def test_LIST_collection_map(self):
-        has_simple_objects = filter(lambda x: isinstance(x, HasSimple),
-                                    self.r.list_collection)
+        has_simple_objects = [obj for obj in self.r.list_collection
+                              if isinstance(obj, HasSimple)]
         self.assertEqual(len(has_simple_objects), 2)
         self.assertEqual(self.r.list_collection[0].type, 'has_simple')
         self.assertEqual(self.r.list_collection[0].simple.type, 'simple')

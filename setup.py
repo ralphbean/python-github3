@@ -28,7 +28,8 @@ setup(
         'nose',
         'mock',
     ],
-    install_requires=map(str.strip, open(join('requirements', 'base.txt'))),
+    install_requires=[
+        s.strip() for s in open(join('requirements', 'base.txt'))],
     include_package_data=True,
     classifiers=(
         'Programming Language :: Python',

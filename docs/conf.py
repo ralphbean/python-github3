@@ -12,6 +12,7 @@
 # serve to show the default.
 
 import sys, os
+import six
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -41,8 +42,8 @@ source_encoding = 'utf-8'
 master_doc = 'index'
 
 # General information about the project.
-project = u'pygithub3'
-copyright = u'2012, David Medina'
+project = six.u('pygithub3')
+copyright = six.u('2012, David Medina')
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -189,8 +190,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'pygithub3.tex', u'pygithub3 Documentation',
-   u'David Medina', 'manual'),
+  ('index', 'pygithub3.tex', six.u('pygithub3 Documentation'),
+   six.u('David Medina'), 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -219,8 +220,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'pygithub3', u'pygithub3 Documentation',
-     [u'David Medina'], 1)
+    ('index', 'pygithub3', six.u('pygithub3 Documentation'),
+     [six.u('David Medina')], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -233,8 +234,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'pygithub3', u'pygithub3 Documentation',
-   u'David Medina', 'pygithub3', 'One line description of project.',
+  ('index', 'pygithub3', six.u('pygithub3 Documentation'),
+   six.u('David Medina'), 'pygithub3', 'One line description of project.',
    'Miscellaneous'),
 ]
 

@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 from pygithub3.services.base import Service
-from comments import Comments
+from .comments import Comments
 
 
 class Gist(Service):

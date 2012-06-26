@@ -105,6 +105,6 @@ class Result(base.Result):
 
         :param int page: Page number
         """
-        if page in xrange(1, self.pages + 1):
+        if page in range(1, self.pages + 1):
             return base.Page(self.getter, page)
         return None

@@ -5,6 +5,7 @@ HTTP Link Header Parsing
 
 Simple routines to parse and manipulate Link headers.
 """
+from __future__ import print_function
 
 __license__ = """
 Copyright (c) 2009 Mark Nottingham
@@ -86,4 +87,4 @@ def parse_link_value(instr):
 if __name__ == '__main__':
 	import sys
 	if len(sys.argv) > 1:
-		print parse_link_value(sys.argv[1])
+		print(parse_link_value(sys.argv[1]))
